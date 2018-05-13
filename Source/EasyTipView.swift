@@ -248,9 +248,9 @@ open class EasyTipView: UIView {
     fileprivate lazy var textSize: CGSize = {
         
         [unowned self] in
-        
-        var attributes = [NSAttributedStringKey.font : self.preferences.drawing.font]
-        self.text.addAttributes(attributes, range: NSMakeRange(0, self.text.length))
+
+//        var attributes = [NSAttributedStringKey.font : self.preferences.drawing.font]
+//        self.text.addAttributes(attributes, range: NSMakeRange(0, self.text.length))
 
         var textSize = self.text.boundingRect(with: CGSize(width: self.preferences.positioning.maxWidth, height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil).size
         
@@ -278,7 +278,7 @@ open class EasyTipView: UIView {
     open static var globalPreferences = Preferences()
     
     // MARK:- Initializer -
-    
+
     public init(text: NSMutableAttributedString, preferences: Preferences = EasyTipView.globalPreferences, delegate: EasyTipViewDelegate? = nil) {
         self.text = text
         self.preferences = preferences
@@ -521,7 +521,7 @@ open class EasyTipView: UIView {
         
         
         let textRect = CGRect(x: bubbleFrame.origin.x + (bubbleFrame.size.width - textSize.width) / 2, y: bubbleFrame.origin.y + (bubbleFrame.size.height - textSize.height) / 2, width: textSize.width, height: textSize.height)
-        text.addAttributes([NSAttributedStringKey.font : preferences.drawing.font, NSAttributedStringKey.foregroundColor : preferences.drawing.foregroundColor, NSAttributedStringKey.paragraphStyle : paragraphStyle], range: NSMakeRange(0, text.length))
+        text.addAttributes([NSAttributedStringKey.foregroundColor : preferences.drawing.foregroundColor, NSAttributedStringKey.paragraphStyle : paragraphStyle], range: NSMakeRange(0, text.length))
         text.draw(in: textRect)
     }
     
