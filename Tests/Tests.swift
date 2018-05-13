@@ -22,7 +22,7 @@ class Tests: XCTestCase {
         
         view.center = superview.center
         
-        let tipView = EasyTipView(text: "Some text", preferences: preferences)
+        let tipView = EasyTipView(text: NSMutableAttributedString(string:"Some text"), preferences: preferences)
         tipView.show(animated: false, forView: view, withinSuperview: superview)
         
         XCTAssert(tipView.superview === superview, "EasyTipView should be present")
@@ -36,7 +36,7 @@ class Tests: XCTestCase {
         var preferences = EasyTipView.Preferences()
         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.bottom
         
-        let tipView = EasyTipView(text: "Some text", preferences: preferences)
+        let tipView = EasyTipView(text: NSMutableAttributedString(string:"Some text"), preferences: preferences)
         tipView.show(animated: false, forView: view, withinSuperview: superview)
         
         XCTAssert(tipView.superview === superview, "EasyTipView should be present")
@@ -50,7 +50,7 @@ class Tests: XCTestCase {
         var preferences = EasyTipView.Preferences()
         preferences.drawing.arrowPosition = .left
         
-        let tipView = EasyTipView(text: "Some text", preferences: preferences)
+        let tipView = EasyTipView(text: NSMutableAttributedString(string:"Some text"), preferences: preferences)
         tipView.show(animated: false, forView: view, withinSuperview: superview)
         
         XCTAssert(tipView.superview === superview, "EasyTipView should be present")
@@ -66,7 +66,7 @@ class Tests: XCTestCase {
         
         view.frame = CGRect(x: superview.frame.size.width - 100, y: 0, width: 100, height: 100)
         
-        let tipView = EasyTipView(text: "Some text", preferences: preferences)
+        let tipView = EasyTipView(text: NSMutableAttributedString(string:"Some text"), preferences: preferences)
         tipView.show(animated: false, forView: view, withinSuperview: superview)
         
         XCTAssert(tipView.superview === superview, "EasyTipView should be present")
@@ -82,7 +82,7 @@ class Tests: XCTestCase {
         
         view.center = superview.center
         
-        let tipView = EasyTipView(text: "Some text", preferences: preferences)
+        let tipView = EasyTipView(text: NSMutableAttributedString(string:"Some text"), preferences: preferences)
         tipView.show(animated: false, forView: view, withinSuperview: superview)
         
         XCTAssert(tipView.superview === superview, "EasyTipView should be present")
@@ -95,7 +95,7 @@ class Tests: XCTestCase {
         var preferences = EasyTipView.Preferences()
         preferences.drawing.arrowPosition = .any
         
-        let tipView = EasyTipView(text: "Some text", preferences: preferences)
+        let tipView = EasyTipView(text: NSMutableAttributedString(string:"Some text"), preferences: preferences)
         tipView.show(animated: false, forView: view, withinSuperview: superview)
         
         XCTAssert(tipView.superview === superview, "EasyTipView should be present")
@@ -108,7 +108,7 @@ class Tests: XCTestCase {
         var preferences = EasyTipView.Preferences()
         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.top
         
-        let tipView = EasyTipView(text: "Some text", preferences: preferences)
+        let tipView = EasyTipView(text: NSMutableAttributedString(string:"Some text"), preferences: preferences)
         tipView.show(animated: false, forView: view, withinSuperview: superview)
         
         XCTAssert(tipView.superview === superview, "EasyTipView should be present")
@@ -121,7 +121,7 @@ class Tests: XCTestCase {
         var preferences = EasyTipView.Preferences()
         preferences.drawing.arrowPosition = .right
         
-        let tipView = EasyTipView(text: "Some text", preferences: preferences)
+        let tipView = EasyTipView(text: NSMutableAttributedString(string:"Some text"), preferences: preferences)
         tipView.show(animated: false, forView: view, withinSuperview: superview)
         
         XCTAssert(tipView.superview === superview, "EasyTipView should be present")
@@ -135,7 +135,7 @@ class Tests: XCTestCase {
         preferences.drawing.arrowPosition = .left
         
         view.frame = CGRect(x: superview.frame.size.width - 100, y: superview.frame.size.height - 100, width: 100, height: 100)
-        let tipView = EasyTipView(text: "Some text", preferences: preferences)
+        let tipView = EasyTipView(text: NSMutableAttributedString(string:"Some text"), preferences: preferences)
         tipView.show(animated: false, forView: view, withinSuperview: superview)
         
         XCTAssert(tipView.superview === superview, "EasyTipView should be present")
@@ -154,7 +154,7 @@ class Tests: XCTestCase {
         var preferences = EasyTipView.Preferences()
         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.bottom
         
-        let tipView = EasyTipView(text: "Some text", preferences: preferences)
+        let tipView = EasyTipView(text: NSMutableAttributedString(string:"Some text"), preferences: preferences)
         tipView.show(animated: false, forView: view, withinSuperview: superview)
         
         XCTAssert(tipView.superview === superview, "EasyTipView should be present")
