@@ -241,7 +241,7 @@ open class EasyTipView: UIView {
     fileprivate weak var delegate: EasyTipViewDelegate?
     fileprivate var arrowTip = CGPoint.zero
     fileprivate(set) open var preferences: Preferences
-    open let text: NSMutableAttributedString
+    public let text: NSMutableAttributedString
     
     // MARK: - Lazy variables -
     
@@ -275,7 +275,7 @@ open class EasyTipView: UIView {
     
     // MARK: - Static variables -
     
-    open static var globalPreferences = Preferences()
+    public static var globalPreferences = Preferences()
     
     // MARK:- Initializer -
 
@@ -287,7 +287,7 @@ open class EasyTipView: UIView {
         super.init(frame: CGRect.zero)
 
         self.backgroundColor = UIColor.clear
-        NotificationCenter.default.addObserver(self, selector: #selector(handleRotation), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRotation), name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     deinit
@@ -521,7 +521,7 @@ open class EasyTipView: UIView {
         
         
         let textRect = CGRect(x: bubbleFrame.origin.x + (bubbleFrame.size.width - textSize.width) / 2, y: bubbleFrame.origin.y + (bubbleFrame.size.height - textSize.height) / 2, width: textSize.width, height: textSize.height)
-        text.addAttributes([NSAttributedStringKey.foregroundColor : preferences.drawing.foregroundColor, NSAttributedStringKey.paragraphStyle : paragraphStyle], range: NSMakeRange(0, text.length))
+        text.addAttributes([NSAttributedString.Key.foregroundColor : preferences.drawing.foregroundColor, NSAttributedString.Key.paragraphStyle : paragraphStyle], range: NSMakeRange(0, text.length))
         text.draw(in: textRect)
     }
     
